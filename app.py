@@ -8,7 +8,7 @@ def hello_world():
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
-    print(SomeThing)
+    return print(SomeThing)
 
 @app.route('/yt?link=<YTlink>')
 def ytdl_dl(YTlink):
