@@ -1,5 +1,5 @@
 from flask import Flask
-from session import user
+from c import c
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,7 +9,8 @@ def hello_world():
 @app.route('/fsub/<int:UsrID>')
 async def fsub_telethon(UsrID):
     try:
-        await user.client(GetParticipantRequest("@Harp_Chat", UsrID))
+        with c as client:
+            await c(GetParticipantRequest("@Harp_Chat", UsrID))
         return "200"
     except:
         return "404"
