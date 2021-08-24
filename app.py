@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('app/index.html')
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
