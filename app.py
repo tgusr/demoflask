@@ -8,12 +8,4 @@ def hello_world():
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
-    return print(SomeThing)
-
-@app.route('/yt?link=<YTlink>')
-def ytdl_dl(YTlink):
-    try:
-        with youtube_dl.YoutubeDL({}) as yt:
-            return yt.extract_info(YTlink, download=False)
-    except:
-        return "Something went wrong"
+    return SomeThing
