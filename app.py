@@ -11,7 +11,7 @@ def hello_world():
     return 'Hello, Welcome to Harp tech Website! This is made using flask ^_^'
 
 @app.route('/fsub/<int:UsrID>')
-def fsub_telethon(UsrID):
+async def fsub_telethon(UsrID):
     try:
         await client(GetParticipantRequest("@Harp_Chat", UsrID))
         return "200"
