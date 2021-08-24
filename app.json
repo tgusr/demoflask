@@ -1,1 +1,5 @@
-{'stack':'container'}
+{
+    "name": "Flask",
+    "description": "NoneType",
+    "stack": "container"
+}
