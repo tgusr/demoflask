@@ -1,10 +1,14 @@
 from flask import Flask, flash, redirect, render_template, request, url_for
-import os
+import os, random
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/random')
+def index():
+    return random.randient("1", "100")
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
