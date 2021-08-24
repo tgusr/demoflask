@@ -8,7 +8,8 @@ def index():
 
 @app.route('/random')
 def randi():
-    return random.randint(0, 9999)
+    r = random.randint(0, 9999)
+    return str(r)
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
