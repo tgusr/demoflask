@@ -2,9 +2,13 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'Hello, Welcome to Harp tech Website! This is made using flask ^_^'
+def index():
+    return render_template('index.html')
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
     return SomeThing
+
+@app.route('/tg')
+def tg():
+    return redirect(url_for('https://t.me/anjana_ma'))
