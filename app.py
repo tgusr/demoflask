@@ -1,16 +1,19 @@
 from flask import Flask
-from c import c
+import youtube_dl
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
     return 'Hello, Welcome to Harp tech Website! This is made using flask ^_^'
 
-@app.route('/fsub/<int:UsrID>')
-async def fsub_telethon(UsrID):
+@app.route('/print/<SomeThing>')
+def print_(SomeThing):
+    print(SomeThing)
+
+@app.route('/yt?link=<YTlink>')
+def ytdl_dl(YTlink):
     try:
-        with c as client:
-            await c(GetParticipantRequest("@Harp_Chat", UsrID))
-        return "200"
+        with youtube_dl.YoutubeDL({}) as yt:
+            return yt.extract_info(YTlink, download=False)
     except:
-        return "404"
+        return "Something went wrong"
