@@ -8,7 +8,7 @@ def index():
 
 @app.route('/random')
 def randi():
-    return random.randient("1", "100")
+    return random.randint("1", "100")
 
 @app.route('/print/<SomeThing>')
 def print_(SomeThing):
