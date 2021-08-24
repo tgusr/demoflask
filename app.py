@@ -7,7 +7,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/random')
-def index():
+def randi():
     return random.randient("1", "100")
 
 @app.route('/print/<SomeThing>')
