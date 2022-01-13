@@ -15,9 +15,9 @@ def randi():
 def print_(SomeThing):
     return SomeThing
 
-@app.route('/tg')
+@app.route('/redirect')
 def tg():
-    return redirect('https://t.me/anjana_ma')
+    return redirect('https://telegram.org')
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port=os.environ.get("PORT"))
